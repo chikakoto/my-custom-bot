@@ -64,9 +64,9 @@ Here is the instraction how to set up this web application.
    
 6. Create your apache environment file
    
-   6.1 Copy "envvars_" file and name it "envvars" in the Library/bin folder under MAMP/XAMP directory.
+   6.1. Copy "envvars_" file and name it "envvars" in the Library/bin folder under MAMP/XAMP directory.
    
-   6.2 Add following PATH to envvars file
+   6.2. Add following PATH to envvars file
 
     PATH="/usr/local/bin/:/usr/local/Cellar/tesseract/4.1.1/bin:usr/local/Cellar/poppler/21.08.0/bin"
     
