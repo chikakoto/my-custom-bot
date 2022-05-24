@@ -82,7 +82,7 @@ class OCRConvertor():
     text = ''
     status = 'success'
     try:
-        response = requests.head(pdf_url)
+        response = requests.head(pdf_url, timeout=10)
         header = response.headers
         # print(header)
 
@@ -336,6 +336,7 @@ myresult = mycursor.fetchall()
 stop_words = set(stopwords.words('english'))
 word_tokens = word_tokenize(term)
 filtered_keyword = [w for w in word_tokens if not w.lower() in stop_words]
+unique_keyword = list(set(filtered_keyword))
 
 ocr = OCRConvertor()
 
@@ -377,7 +378,7 @@ for x in myresult:
 
         frequency = 0
         each_word = []
-        for word in filtered_keyword:
+        for word in unique_keyword:
             num = text.lower().count(word.lower())
             each_word.append(word + ': ' + str(num))
             frequency += num
