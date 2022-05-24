@@ -76,4 +76,10 @@ Here is the instraction how to set up this web application.
 
 7. Restart MAMP/XAMPP
 
+8. Go to your localhost project url. 
+
+   http://localhost:8888/project/www
+
+   The project folder name may be different based on your environment.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
