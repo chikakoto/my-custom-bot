@@ -61,7 +61,7 @@ Here is the instraction how to set up this web application.
    ```sh
    brew install poppler
    ```
-   If you complete the steps up to here, you can run the python script, CustomSearch.py to see the result without web environment.
+   If you complete the steps up to here, you can run the python script, CustomSearch.py, to see the result without web environment.
    ```sh
    cd your_project_folder
    python3 src/CustomSearch.py "search query here"
