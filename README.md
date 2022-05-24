@@ -54,14 +54,14 @@ Here is the instraction how to set up this web application.
    apt-get install poppler-utils
    ```
    
-   If you are using Homebrew, use following commands. 
+   If you are using Homebrew, use following commands insead.
    ```sh
    brew install tesseract
    ```
    ```sh
    brew install poppler
    ```
-   If you complete the steps up to here, you can run the python script, CustomSearch.py, to see the result without web environment.
+   You can run the python script, CustomSearch.py, to see the result without web environment when you complete the steps up to here.
    ```sh
    cd your_project_folder
    python3 src/CustomSearch.py "search query here"
@@ -78,6 +78,8 @@ Here is the instraction how to set up this web application.
     export PATH
     
     The tesseract and poppler destination will be different based on your environment. 
+    
+    You may need to add Python package destination to PATH. 
 
 7. Restart MAMP/XAMPP
 
