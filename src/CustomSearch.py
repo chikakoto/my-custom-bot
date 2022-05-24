@@ -114,21 +114,26 @@ class OCRConvertor():
 ########################
 
 def get_text_contents(url):
-    response = requests.head(url)
-    header = response.headers
     text = ''
     status = 'success'
-    if header.get('Content-Type') is None:
-        status = "No content"
-    elif 'text/html' in header['Content-Type']: 
-        html_content = requests.get(url).text
-        soup = BS(html_content, "html.parser")
-        if soup.find("body") is None:
-            status = "No body"
-        else:
-            text = soup.find("body").text
-    else: 
-        status = "Not web"
+
+    try:
+        response = requests.head(url, timeout=10)
+        header = response.headers
+
+        if header.get('Content-Type') is None:
+            status = "No content"
+        elif 'text/html' in header['Content-Type']: 
+            html_content = requests.get(url).text
+            soup = BS(html_content, "html.parser")
+            if soup.find("body") is None:
+                status = "No body"
+            else:
+                text = soup.find("body").text
+        else: 
+            status = "Not web"
+    except requests.exceptions.RequestException as error:
+        status = "Timeout"
 
     return text, status
 
